@@ -1,0 +1,161 @@
+@import "./vars.scss";
+@import "./reset.scss";
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+:root[data-theme="white"] {
+  --body-bg-color: white;
+
+  --post-main-color: #b54f4f;
+  --post-second-color: #4361ee;
+  --post-bg-color: #03aa837b;
+
+  --post-text-color: #3a0ca3;
+  --text-second-color: #4361ee4d;
+}
+
+:root[data-theme="dark"] {
+  --body-bg-color: #606060;
+
+  --post-main-color: #a8a8a8;
+  --post-second-color: #90a4ff;
+  --post-bg-color: #bffff07a;
+
+  --post-text-color: #c6adff;
+  --text-second-color: #d7ddf8;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: 'Amazon Ember', sans-serif;
+  font-family: 'Amazon Ember Cd RC', sans-serif;
+  font-family: 'Amazon Ember Display', sans-serif;
+  font-family: 'Amazon Ember Duospace', sans-serif;
+  font-family: 'Amazon Ember Mono', sans-serif;
+  font-family: 'Amazon Ember V2', sans-serif;
+background-color: rgb(231, 231, 231);
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-expand-lg{
+  padding: 1rem;
+  background-color: #131921;
+  color: white;
+  z-index: 30;
+
+  img {
+    width: 115px;
+  }
+  .navbar-nav{
+  }
+  .delivery{
+    span{
+      font-size: .8rem;
+      color: #91a1b3;
+      margin-left: 1rem;
+    }
+    p{
+      margin: .2rem 0 0;
+    }
+  }
+
+  .dropdown{
+    span{
+      color: white;
+    }
+    &-toggle::after{
+      color: white;
+    }
+    &-item{
+      color: black;
+    }
+  }
+  .sign-in{
+    span{
+      font-size: .8rem;
+      color: #91a1b3;
+    }
+    .dropdown{
+      margin: 0;
+    }
+  }
+  .return{
+    span{
+      font-size: .8rem;
+      color: #91a1b3;
+    }
+    p{
+      margin: 0;
+    }
+  }
+
+  .cart{
+    transform: translateY(20%);
+  }
+}
+
+.navigation {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+  background-color: #1e2a39;
+
+  .menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 1rem;
+    padding: 0;
+    a {
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #f2ad00;
+    }
+  }
+}
+
+main{
+  .carousel{
+    z-index: 0;
+    position: relative;
+  }
+
+
+  .list{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 1rem;
+    padding: 0;
+
+    li{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      a{
+        color: $text-more;
+      }
+    }
+  }
+
+}
+
+@media (max-width:991px) {
+  .navigation{
+    display: none;
+  }
+.delivery{
+  margin: 0 !important;
+}
+.list{
+  top: 30% !important;
+}
+}
